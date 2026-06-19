@@ -21,13 +21,6 @@ app.MapGet("/api/users", async (AppDbContext db) =>
     return safeUsers;
 });
 
-app.MapPost("api/users", async (User user, AppDbContext db) => { 
-    await db.Users.AddAsync(user);
-    await db.SaveChangesAsync();
-    return Results.Ok();
-     });
-
-
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
