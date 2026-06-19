@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:UserManagement.Client"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20"> 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Load Users" Name="LoadUsersBTN" Click="LoadUsersBTN_Click" Margin="10"/>
+        <Button Content="Load Users" Name="LoadUsersBTN" Click="LoadUsersBTN_Click" Margin="10" HorizontalAlignment="Left"
+                Background="#6366F1" 
+                Foreground="White" 
+                FontWeight="SemiBold"
+                BorderThickness="0"
+                Cursor="Hand"/>
 
-        <DataGrid Grid.Row="1" Name="UsersGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+        <DataGrid Grid.Row="1" Name="UsersGrid" AutoGenerateColumns="False" IsReadOnly="True" 
+                  Margin="10,0,10,10" Padding="20,20,20,20">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
