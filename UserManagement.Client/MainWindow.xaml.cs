@@ -18,6 +18,7 @@ namespace UserManagement.Client;
 
 public partial class MainWindow : Window
 {
+    private static readonly HttpClient client = new HttpClient();
     public MainWindow()
     {
         InitializeComponent();
@@ -26,7 +27,7 @@ public partial class MainWindow : Window
     
     private async void LoadUsersBTN_Click(object sender, RoutedEventArgs e)
     {
-        using HttpClient client = new HttpClient();
+        
         string jsonText = await client.GetStringAsync("http://localhost:5190/api/users");
         MessageBox.Show(jsonText,"Сырой ответ сервера");
         var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
